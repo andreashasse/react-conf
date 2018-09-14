@@ -2,17 +2,30 @@ import React, { Component } from 'react';
 import Config from './config.js';
 import './App.css';
 import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Switch from '@material-ui/core/Switch';
 
 class App extends Component {
+  state = {
+    checked: false,
+  };
+  handleChange = () => {
+    this.setState(state => ({ checked: !state.checked }));
+  };
   render() {
+    const { checked } = this.state;
     return (
-      <div className="App" proc={process} conf={Config}>
-        url: {process.env.PUBLIC_URL}
-        custom config: {Config.s3.BUCKET}
-        <Button variant="contained" color="primary">
-          Hello World
-        </Button>
-      </div>
+        <React.Fragment>
+          <CssBaseline />
+          <p>url: {process.env.PUBLIC_URL}</p>
+          <p>custom config: {Config.s3.BUCKET}</p>
+          Simple state
+          <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
+          <p>checked: {checked.toString()}</p>
+          <Button variant="contained" color="primary">
+            Hello World
+          </Button>
+        </React.Fragment>
     );
   }
 }
