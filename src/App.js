@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Config from './config.js';
+import AddTodo from './containers/AddTodo';
+import VisibleTodoList from './containers/VisibleTodoList'
 import './App.css';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -22,6 +24,8 @@ class App extends Component {
           Simple state
           <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
           <p>checked: {checked.toString()}</p>
+          <AddTodo/>
+          <VisibleTodoList />
           <Button variant="contained" color="primary">
             Hello World
           </Button>
