@@ -6,6 +6,7 @@
     "@material-ui/core": "^3.0.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.4"
   },
   "homepage": "http://anha0825.github.io/react-conf",
@@ -20,6 +21,7 @@
     "deploy:prod": "gh-pages -d build"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0"
+    "gh-pages": "^1.2.0",
+    "redux-devtools": "^3.4.1"
   }
 }
